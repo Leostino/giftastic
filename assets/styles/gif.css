@@ -1,3 +1,46 @@
-h1 {
+
+body {
+    background-color: black;
+}
+
+.container {
+    background-color: lightblue;
+    margin-top: 20px;
+}
+
+#firstDiv {
+    margin-left: 400px;
+}
+
+header p {
+    font-family: 'Sancreek', cursive;
+    font-size:40px;
     color:blue;
+}
+
+input {
+    margin-top:10px;
+    margin-left:40px;
+    }
+
+#search {
+    margin-top:10px;
+    margin-left:48px;
+}    
+
+#displayGifs {
+     display: contents;   
+}
+
+
+#gifs {
+    margin-top:40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
 }
