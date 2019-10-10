@@ -8,7 +8,7 @@ body {
     margin-top: 20px;
 }
 
-#firstDiv {
+#first-div {
     margin-left: 400px;
 }
 
@@ -26,11 +26,7 @@ input {
 #search {
     margin-top:10px;
     margin-left:48px;
-}    
-
-#displayGifs {
-     display: contents;   
-}
+} 
 
 
 #gifs {
@@ -44,3 +40,20 @@ img{
     height: 200px;
     border: 2px solid black;
 }
+
+@media only screen and (max-width: 600px) {
+    #first-div {margin-left:80px}
+    #gifs{
+        display: block;
+        margin-left: 25px
+    }
+  
+}
+
+@media only screen and (max-width: 1000px) {
+    #first-div{margin-left: 100px}
+    #gifs{
+        display: block;
+        margin-left: 25px
+    }
+  } 

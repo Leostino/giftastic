@@ -1,38 +1,53 @@
 // Event handler On-click function for the search button
 
+
 $(document).ready(function() {
 
-$("#input").val("");
+    //When search button is clicked
 
-$("#input").focus();
+    $("#search").on("click", function() {
 
-$("#search").on("click", function() {
+       // set div for gifs to display none
 
-    $("#gifs").html("");
-
-    var userSearch = $("#input").val();
-
-    console.log(userSearch);
-
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=83Fgh3I1oIoXKbpTYDtScko02CRuyMxT&limit=5";
+       $("#gifs").html("");
     
-    console.log(queryURL);
+       // get what user typed in
+    
+       var userSearch = $("#input").val();
+    
+       console.log(userSearch);
+    
+       // query gif api with user's input stored in a variable
 
-	$.ajax({
+       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userSearch + "&api_key=83Fgh3I1oIoXKbpTYDtScko02CRuyMxT&limit=5";
+    
+       console.log(queryURL);
 
-        url: queryURL,
+       // ajax call to gif api using get method
+
+	    $.ajax({
+
+          url: queryURL,
         
-        method: "GET"
+          method: "GET"
         
-	}).done(function(response) {
+	    }).done(function(response) {
 
-		for (var i = 0; i < 10; i++) {
+          // loop through the response or callback from gif api
 
-            console.log(response.data[i]);
+		    for (var i = 0; i < 5; i++) {
+
+             console.log(response.data[i]);
+
+              // dynamically append 5 gifs to div with id #gifs
             
-			$("#gifs").append("<img alt='" + response.data[i].type + "' src='" + response.data[i].images.fixed_height_downsampled.url + "'>");
-		}
-    });
+			  $("#gifs").append("<img class='image-fit mb-3' alt='" + response.data[i].type + "' src='" + response.data[i].images.fixed_height_downsampled.url + "'>");
+        
+            }
     
-   });
+        });
+    
+   
+    });
+
 })
